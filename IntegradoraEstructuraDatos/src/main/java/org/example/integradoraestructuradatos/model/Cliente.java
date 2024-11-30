@@ -1,9 +1,12 @@
 package org.example.integradoraestructuradatos.model;
 
+package org.example.supermercado.model;
+
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "cliente")
@@ -12,19 +15,24 @@ public class Cliente {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
+    @Column(nullable = false)
     private String primerNombre;
+
     private String segundoNombre;
     private String apellidoPaterno;
     private String apellidoMaterno;
+
+    @Column(nullable = false)
     private String estadoNacimiento;
 
     @Temporal(TemporalType.DATE)
     @JsonFormat(pattern = "yyyy-MM-dd")
     private Date fechaNacimiento;
 
+    @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<CarritoProducto> carritoProductos;
 
-    @Lob
-
+    // Getters y Setters
     public long getId() {
         return id;
     }
@@ -45,8 +53,8 @@ public class Cliente {
         return segundoNombre;
     }
 
-    public void setSegundoNombre(String nombredos) {
-        this.segundoNombre = nombredos;
+    public void setSegundoNombre(String segundoNombre) {
+        this.segundoNombre = segundoNombre;
     }
 
     public String getApellidoPaterno() {
@@ -65,14 +73,6 @@ public class Cliente {
         this.apellidoMaterno = apellidoMaterno;
     }
 
-    public Date getFechaNacimiento() {
-        return fechaNacimiento;
-    }
-
-    public void setFechaNacimiento(Date fechaNacimiento) {
-        this.fechaNacimiento = fechaNacimiento;
-    }
-
     public String getEstadoNacimiento() {
         return estadoNacimiento;
     }
@@ -81,5 +81,19 @@ public class Cliente {
         this.estadoNacimiento = estadoNacimiento;
     }
 
+    public Date getFechaNacimiento() {
+        return fechaNacimiento;
+    }
 
+    public void setFechaNacimiento(Date fechaNacimiento) {
+        this.fechaNacimiento = fechaNacimiento;
+    }
+
+    public List<CarritoProducto> getCarritoProductos() {
+        return carritoProductos;
+    }
+
+    public void setCarritoProductos(List<CarritoProducto> carritoProductos) {
+        this.carritoProductos = carritoProductos;
+    }
 }
