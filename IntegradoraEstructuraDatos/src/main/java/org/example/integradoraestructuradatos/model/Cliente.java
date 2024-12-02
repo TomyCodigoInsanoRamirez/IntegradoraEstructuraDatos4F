@@ -1,7 +1,5 @@
 package org.example.integradoraestructuradatos.model;
 
-package org.example.supermercado.model;
-
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 
