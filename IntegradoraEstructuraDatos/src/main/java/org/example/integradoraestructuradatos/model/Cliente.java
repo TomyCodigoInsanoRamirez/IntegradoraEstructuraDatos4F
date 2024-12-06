@@ -16,19 +16,19 @@ public class Cliente {
     @Column(nullable = false)
     private String primerNombre;
 
-    private String segundoNombre;
+    //private String segundoNombre;
     private String apellidoPaterno;
-    private String apellidoMaterno;
+   // private String apellidoMaterno;
 
-    @Column(nullable = false)
-    private String estadoNacimiento;
+    //@Column(nullable = false)
+    //private String estadoNacimiento;
 
-    @Temporal(TemporalType.DATE)
-    @JsonFormat(pattern = "yyyy-MM-dd")
-    private Date fechaNacimiento;
+    //@Temporal(TemporalType.DATE)
+    //@JsonFormat(pattern = "yyyy-MM-dd")
+    //private Date fechaNacimiento;
 
-    @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private List<CarritoProducto> carritoProductos;
+    //@OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    //private List<CarritoProducto> carritoProductos;
 
     // Getters y Setters
     public long getId() {
@@ -47,51 +47,51 @@ public class Cliente {
         this.primerNombre = primerNombre;
     }
 
-    public String getSegundoNombre() {
-        return segundoNombre;
-    }
+   // public String getSegundoNombre() {
+   //     return segundoNombre;
+   // }
 
-    public void setSegundoNombre(String segundoNombre) {
-        this.segundoNombre = segundoNombre;
-    }
+   // public void setSegundoNombre(String segundoNombre) {
+   //     this.segundoNombre = segundoNombre;
+  //  }
 
     public String getApellidoPaterno() {
         return apellidoPaterno;
     }
 
-    public void setApellidoPaterno(String apellidoPaterno) {
-        this.apellidoPaterno = apellidoPaterno;
-    }
+    //public void setApellidoPaterno(String apellidoPaterno) {
+    //    this.apellidoPaterno = apellidoPaterno;
+  //  }
 
-    public String getApellidoMaterno() {
-        return apellidoMaterno;
-    }
+   // public String getApellidoMaterno() {
+    //    return apellidoMaterno;
+   // }
 
-    public void setApellidoMaterno(String apellidoMaterno) {
-        this.apellidoMaterno = apellidoMaterno;
-    }
+   // public void setApellidoMaterno(String apellidoMaterno) {
+    //    this.apellidoMaterno = apellidoMaterno;
+   // }
 
-    public String getEstadoNacimiento() {
-        return estadoNacimiento;
-    }
+    //public String getEstadoNacimiento() {
+    //    return estadoNacimiento;
+    //}
 
-    public void setEstadoNacimiento(String estadoNacimiento) {
-        this.estadoNacimiento = estadoNacimiento;
-    }
+   // public void setEstadoNacimiento(String estadoNacimiento) {
+    //    this.estadoNacimiento = estadoNacimiento;
+    //}
 
-    public Date getFechaNacimiento() {
-        return fechaNacimiento;
-    }
+   // public Date getFechaNacimiento() {
+   //     return fechaNacimiento;
+   // }
 
-    public void setFechaNacimiento(Date fechaNacimiento) {
-        this.fechaNacimiento = fechaNacimiento;
-    }
+    //public void setFechaNacimiento(Date fechaNacimiento) {
+    //    this.fechaNacimiento = fechaNacimiento;
+   // }
 
-    public List<CarritoProducto> getCarritoProductos() {
-        return carritoProductos;
-    }
+    //public List<CarritoProducto> getCarritoProductos() {
+        //return carritoProductos;
+   // }
 
-    public void setCarritoProductos(List<CarritoProducto> carritoProductos) {
-        this.carritoProductos = carritoProductos;
-    }
+   // public void setCarritoProductos(List<CarritoProducto> carritoProductos) {
+        //this.carritoProductos = carritoProductos;
+    //}
 }
